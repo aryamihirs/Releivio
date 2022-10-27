@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		407C4FE828F386CC00328956 /* RelevioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C4FE728F386CC00328956 /* RelevioApp.swift */; };
+		407C4FEA28F386CC00328956 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C4FE928F386CC00328956 /* ContentView.swift */; };
+		407C4FEC28F386CE00328956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407C4FEB28F386CE00328956 /* Assets.xcassets */; };
+		407C4FF028F386CE00328956 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407C4FEF28F386CE00328956 /* Preview Assets.xcassets */; };
+		407C4FFA28F386CE00328956 /* RelevioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C4FF928F386CE00328956 /* RelevioTests.swift */; };
+		407C500428F386CE00328956 /* RelevioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C500328F386CE00328956 /* RelevioUITests.swift */; };
+		407C500628F386CE00328956 /* RelevioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C500528F386CE00328956 /* RelevioUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		407C4FF628F386CE00328956 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 407C4FDC28F386CC00328956 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 407C4FE328F386CC00328956;
+			remoteInfo = Relevio;
+		};
+		407C500028F386CE00328956 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 407C4FDC28F386CC00328956 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 407C4FE328F386CC00328956;
+			remoteInfo = Relevio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		407C4FE428F386CC00328956 /* Relevio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Relevio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		407C4FE728F386CC00328956 /* RelevioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevioApp.swift; sourceTree = "<group>"; };
+		407C4FE928F386CC00328956 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		407C4FEB28F386CE00328956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		407C4FED28F386CE00328956 /* Relevio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Relevio.entitlements; sourceTree = "<group>"; };
+		407C4FEF28F386CE00328956 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		407C4FF528F386CE00328956 /* RelevioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelevioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		407C4FF928F386CE00328956 /* RelevioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevioTests.swift; sourceTree = "<group>"; };
+		407C4FFF28F386CE00328956 /* RelevioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelevioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		407C500328F386CE00328956 /* RelevioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevioUITests.swift; sourceTree = "<group>"; };
+		407C500528F386CE00328956 /* RelevioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		407C4FE128F386CC00328956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		407C4FF228F386CE00328956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		407C4FFC28F386CE00328956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		407C4FDB28F386CC00328956 = {
+			isa = PBXGroup;
+			children = (
+				407C4FE628F386CC00328956 /* Relevio */,
+				407C4FF828F386CE00328956 /* RelevioTests */,
+				407C500228F386CE00328956 /* RelevioUITests */,
+				407C4FE528F386CC00328956 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		407C4FE528F386CC00328956 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				407C4FE428F386CC00328956 /* Relevio.app */,
+				407C4FF528F386CE00328956 /* RelevioTests.xctest */,
+				407C4FFF28F386CE00328956 /* RelevioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		407C4FE628F386CC00328956 /* Relevio */ = {
+			isa = PBXGroup;
+			children = (
+				407C4FE728F386CC00328956 /* RelevioApp.swift */,
+				407C4FE928F386CC00328956 /* ContentView.swift */,
+				407C4FEB28F386CE00328956 /* Assets.xcassets */,
+				407C4FED28F386CE00328956 /* Relevio.entitlements */,
+				407C4FEE28F386CE00328956 /* Preview Content */,
+			);
+			path = Relevio;
+			sourceTree = "<group>";
+		};
+		407C4FEE28F386CE00328956 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				407C4FEF28F386CE00328956 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		407C4FF828F386CE00328956 /* RelevioTests */ = {
+			isa = PBXGroup;
+			children = (
+				407C4FF928F386CE00328956 /* RelevioTests.swift */,
+			);
+			path = RelevioTests;
+			sourceTree = "<group>";
+		};
+		407C500228F386CE00328956 /* RelevioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				407C500328F386CE00328956 /* RelevioUITests.swift */,
+				407C500528F386CE00328956 /* RelevioUITestsLaunchTests.swift */,
+			);
+			path = RelevioUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		407C4FE328F386CC00328956 /* Relevio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 407C500928F386CE00328956 /* Build configuration list for PBXNativeTarget "Relevio" */;
+			buildPhases = (
+				407C4FE028F386CC00328956 /* Sources */,
+				407C4FE128F386CC00328956 /* Frameworks */,
+				407C4FE228F386CC00328956 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Relevio;
+			productName = Relevio;
+			productReference = 407C4FE428F386CC00328956 /* Relevio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		407C4FF428F386CE00328956 /* RelevioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 407C500C28F386CE00328956 /* Build configuration list for PBXNativeTarget "RelevioTests" */;
+			buildPhases = (
+				407C4FF128F386CE00328956 /* Sources */,
+				407C4FF228F386CE00328956 /* Frameworks */,
+				407C4FF328F386CE00328956 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				407C4FF728F386CE00328956 /* PBXTargetDependency */,
+			);
+			name = RelevioTests;
+			productName = RelevioTests;
+			productReference = 407C4FF528F386CE00328956 /* RelevioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		407C4FFE28F386CE00328956 /* RelevioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 407C500F28F386CE00328956 /* Build configuration list for PBXNativeTarget "RelevioUITests" */;
+			buildPhases = (
+				407C4FFB28F386CE00328956 /* Sources */,
+				407C4FFC28F386CE00328956 /* Frameworks */,
+				407C4FFD28F386CE00328956 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				407C500128F386CE00328956 /* PBXTargetDependency */,
+			);
+			name = RelevioUITests;
+			productName = RelevioUITests;
+			productReference = 407C4FFF28F386CE00328956 /* RelevioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		407C4FDC28F386CC00328956 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					407C4FE328F386CC00328956 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					407C4FF428F386CE00328956 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 407C4FE328F386CC00328956;
+					};
+					407C4FFE28F386CE00328956 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 407C4FE328F386CC00328956;
+					};
+				};
+			};
+			buildConfigurationList = 407C4FDF28F386CC00328956 /* Build configuration list for PBXProject "Relevio" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 407C4FDB28F386CC00328956;
+			productRefGroup = 407C4FE528F386CC00328956 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				407C4FE328F386CC00328956 /* Relevio */,
+				407C4FF428F386CE00328956 /* RelevioTests */,
+				407C4FFE28F386CE00328956 /* RelevioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		407C4FE228F386CC00328956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407C4FF028F386CE00328956 /* Preview Assets.xcassets in Resources */,
+				407C4FEC28F386CE00328956 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		407C4FF328F386CE00328956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		407C4FFD28F386CE00328956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		407C4FE028F386CC00328956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407C4FEA28F386CC00328956 /* ContentView.swift in Sources */,
+				407C4FE828F386CC00328956 /* RelevioApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		407C4FF128F386CE00328956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407C4FFA28F386CE00328956 /* RelevioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		407C4FFB28F386CE00328956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407C500428F386CE00328956 /* RelevioUITests.swift in Sources */,
+				407C500628F386CE00328956 /* RelevioUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		407C4FF728F386CE00328956 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 407C4FE328F386CC00328956 /* Relevio */;
+			targetProxy = 407C4FF628F386CE00328956 /* PBXContainerItemProxy */;
+		};
+		407C500128F386CE00328956 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 407C4FE328F386CC00328956 /* Relevio */;
+			targetProxy = 407C500028F386CE00328956 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		407C500728F386CE00328956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		407C500828F386CE00328956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		407C500A28F386CE00328956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Relevio/Relevio.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Relevio/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SEM.Relevio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		407C500B28F386CE00328956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Relevio/Relevio.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Relevio/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SEM.Relevio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		407C500D28F386CE00328956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SEM.RelevioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Relevio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Relevio";
+			};
+			name = Debug;
+		};
+		407C500E28F386CE00328956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SEM.RelevioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Relevio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Relevio";
+			};
+			name = Release;
+		};
+		407C501028F386CE00328956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SEM.RelevioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Relevio;
+			};
+			name = Debug;
+		};
+		407C501128F386CE00328956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SEM.RelevioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Relevio;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		407C4FDF28F386CC00328956 /* Build configuration list for PBXProject "Relevio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				407C500728F386CE00328956 /* Debug */,
+				407C500828F386CE00328956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		407C500928F386CE00328956 /* Build configuration list for PBXNativeTarget "Relevio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				407C500A28F386CE00328956 /* Debug */,
+				407C500B28F386CE00328956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		407C500C28F386CE00328956 /* Build configuration list for PBXNativeTarget "RelevioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				407C500D28F386CE00328956 /* Debug */,
+				407C500E28F386CE00328956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		407C500F28F386CE00328956 /* Build configuration list for PBXNativeTarget "RelevioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				407C501028F386CE00328956 /* Debug */,
+				407C501128F386CE00328956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 407C4FDC28F386CC00328956 /* Project object */;
+}
