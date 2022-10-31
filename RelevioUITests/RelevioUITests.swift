@@ -26,9 +26,23 @@ final class RelevioUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true, "Execution test passed!")
     }
+    
+    func testChangeInColorBasedOnStressLevel(){}
+    
+    func testRetreveStressLevelValue(){}
+    
+    func testRetreveStressLevelColor(){}
+    
+    func testRetreveStressLevelEmojis(){}
+    
+    func testNavigationFlow(){}
+    
+    func testIsDashboardScrollable(){}
+    
+    func testIsDashboardViewRendered(){}
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

@@ -7,19 +7,47 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     var body: some View {
-            ZStack { //Entire screen
-                Color.gray
-                    .brightness(0.35)
-                    .ignoresSafeArea(.all)
-                
-                VStack{
-                    Text("Stress Level")
-                        .foregroundColor(.black)
-                        .font(.system(.title, design: .default))
-                        .fontWeight(.heavy)
-                    TodaysStressView(stressLevel: 50)
+        TabView {
+            DashboardView()
+                .body.tabItem {
+                    Label("Dashboard", systemImage: "house")
+                }
+            DetailedView()
+                .body.tabItem {
+                    Label("Detail", systemImage: "gearshape")
+                }
+        }
+    }
+}
+
+struct DetailedView {
+    var body: some View{
+        ZStack
+        {
+            Color.mint
+            Text("Detailed View")
+        }
+        .navigationTitle("Detailed screen")
+    }
+}
+
+struct DashboardView {
+    var body: some View{
+        ZStack { //Entire screen
+            Color.gray
+                .brightness(0.35)
+                .ignoresSafeArea(.all)
+            VStack{
+                Text("Stress Level")
+                    .foregroundColor(.black)
+                    .font(.system(.title, design: .default))
+                    .fontWeight(.heavy)
+                TodaysStressView(stressLevel: 50)
+                List{
                     StressDataListItemView(day: "Monday", stressLevel: 22)
                         .padding(10)
                     StressDataListItemView(day: "Sunday", stressLevel: 40)
@@ -30,8 +58,12 @@ struct ContentView: View {
                         .padding(10)
                 }
             }
+        }
+        .navigationTitle("Dashboard screen")
     }
 }
+
+
 
 func getStressLevelColor(stressLevel: Int) -> Color {
     if stressLevel < 40{
@@ -98,7 +130,7 @@ struct StressDataListItemView: View {
     
     var day: String
     var stressLevel: Int
-//    var img: Image
+    //    var img: Image
     
     var body: some View {
         HStack {
@@ -122,7 +154,7 @@ struct StressDataListItemView: View {
         .cornerRadius(20)
     }
 }
-    
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
