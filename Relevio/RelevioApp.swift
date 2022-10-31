@@ -11,6 +11,7 @@ import SwiftUI
 struct RelevioApp: App {
     var body: some Scene {
         WindowGroup {
+            // Creating a new screen - ContentView
             ContentView()
             
         }
