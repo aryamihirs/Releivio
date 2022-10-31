@@ -35,6 +35,10 @@ struct DetailedView {
     }
 }
 
+func getRandomStressLevelValue() -> Int{
+    return Int.random(in: 1..<100)
+}
+
 struct DashboardView {
     var body: some View{
         ZStack { //Entire screen
@@ -46,15 +50,15 @@ struct DashboardView {
                     .foregroundColor(.black)
                     .font(.system(.title, design: .default))
                     .fontWeight(.heavy)
-                TodaysStressView(stressLevel: 50)
+                TodaysStressView(stressLevel: getRandomStressLevelValue())
                 List{
-                    StressDataListItemView(day: "Monday", stressLevel: 22)
+                    StressDataListItemView(day: "Monday", stressLevel: getRandomStressLevelValue())
                         .padding(10)
-                    StressDataListItemView(day: "Sunday", stressLevel: 40)
+                    StressDataListItemView(day: "Sunday", stressLevel: getRandomStressLevelValue())
                         .padding(10)
-                    StressDataListItemView(day: "Saturday", stressLevel: 90)
+                    StressDataListItemView(day: "Saturday", stressLevel: getRandomStressLevelValue())
                         .padding(10)
-                    StressDataListItemView(day: "Friday", stressLevel: 70)
+                    StressDataListItemView(day: "Friday", stressLevel: getRandomStressLevelValue())
                         .padding(10)
                 }
             }
