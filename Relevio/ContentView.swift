@@ -9,37 +9,19 @@ import SwiftUI
 import HealthKit
 import Charts
 
+
 // get HRV data from HealthKit API -> pass it to the mlModel -> get a label [0,1,2,3] -> generate stress level value for the graph -> mention mood in the 
 
 let items: [Item] = [
-    Item(type: "Monday", value: Double(getStressLevelValue())),
-    Item(type: "Tuesday", value: Double(getStressLevelValue())),
-    Item(type: "Wednesday", value: Double(getStressLevelValue())),
-    Item(type: "Thursday", value: Double(getStressLevelValue())),
-    Item(type: "Friday", value: Double(getStressLevelValue())),
-    Item(type: "Saturday", value: Double(getStressLevelValue())),
-    Item(type: "Sunday", value: Double(getStressLevelValue()))
+    Item(type: "Mon", value: Double(getStressLevelValue())),
+    Item(type: "Tue", value: Double(getStressLevelValue())),
+    Item(type: "Wed", value: Double(getStressLevelValue())),
+    Item(type: "Thu", value: Double(getStressLevelValue())),
+    Item(type: "Fri", value: Double(getStressLevelValue())),
+    Item(type: "Sat", value: Double(getStressLevelValue())),
+    Item(type: "Sun", value: Double(getStressLevelValue()))
 ]
-
-extension Date {
-    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
-        return calendar.dateComponents(Set(components), from: self)
-    }
-
-    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
-        return calendar.component(component, from: self)
-    }
-}
-
-let date = Date()
-
-let components = date.get(.day, .month, .year)
-let day = components.day
-let month = components.month
-let year = components.year
-
 var todaysStressLevel = getStressLevelValue()
-
 var healthStore : HKHealthStore?
 
 
@@ -63,18 +45,60 @@ struct DetailedView {
     var body: some View{
         NavigationView {
             ScrollView {
-                Chart(items) { item in
-                    BarMark(
-                        x: .value("Day", item.type),
-                        y: .value("Stress Level", item.value)
-                    )
-                    .foregroundStyle(by: .value("Stress Level", item.value))
+                HStack{
+                    VStack{
+                        Text("Stress level data")
+                            .foregroundColor(.black)
+                            .font(.system(.title, design: .default))
+                            .fontWeight(.heavy)
+                            .padding()
+                        Chart(items) { item in
+                            BarMark(
+                                x: .value("Day", item.type),
+                                y: .value("Stress Level", item.value)
+                            )
+                            .foregroundStyle(by: .value("Stress Level", item.value))
+                        }
+                        .frame(height: 200)
+                        .padding()
+                        Text("Today's Advice")
+                            .foregroundColor(.black)
+                            .font(.system(.title, design: .default))
+                            .fontWeight(.heavy)
+                            .padding()
+                        Text(getAdviceSection(stressLevel: todaysStressLevel))
+                            .foregroundColor(.black)
+                            .font(.system(.body, design: .default))
+
+                        
+                        Text("Guided Meditation")
+                            .foregroundColor(.black)
+                            .font(.system(.title, design: .default))
+                            .fontWeight(.heavy)
+                            .padding()
+                        
+                        Button( action: {
+                            playSound()
+                        }) {
+                            Text("Play")
+                                .foregroundColor(Color.blue)
+                                .font(.system(size: 32))
+                                .frame(height: 20)
+                        }
+                        
+                    }
+                    .frame(maxWidth:.infinity, minHeight: 60)
+                    .padding(15)
+                    .background(.white)
+                    .cornerRadius(20)
                 }
-                .frame(height: 200)
-                .padding()
+                .frame(maxWidth:.infinity, minHeight: 60)
+                .padding(10)
+                .background(.white)
+                .cornerRadius(20)
             }
-            .navigationTitle("Stress level data")
         }
+        .navigationTitle("Stress level data")
     }
 }
 
@@ -103,7 +127,7 @@ struct DashboardView {
                 List(items){
                     item in
                     StressDataListItemView(day: item.type, stressLevel: Int(item.value))
-                            .padding(10)
+                        .padding(10)
                 }
             }
         }
@@ -111,7 +135,12 @@ struct DashboardView {
     }
 }
 
-
+extension View {
+    func Print(_ value: Any) -> Self {
+        Swift.print(value)
+        return self
+    }
+}
 
 func getStressLevelColor(stressLevel: Int) -> Color {
     if stressLevel < 40{
@@ -139,6 +168,42 @@ func getStressLevelEmoji(stressLevel: Int) -> Image {
     return Image("Perfect")
 }
 
+// text of advice for perfect status
+let level_perfect:String = "Perfect!\nLooks like you're doing well! keep it up and maintain your good living habits!"
+// text of advice for good status
+let level_good:String = "Your stress level is under control!\nYou can always do better :). Try meditating /taking a nap for 30 minutes, it may help you feel awesome!"
+//text of advice for unhappy status
+let level_unhappy:String = "It is natural to feel tired and depressed.\nThis may be because of insomnia, untimely work, rest, etc. Don't worry, incorporating meditation and rest go a long way and improve our overall wellbeing!"
+//text of advice for frustrated status
+let level_frustrated:String = "Oh, it looks like we're going through a rough patch.\nNo problem at all, take your time, investing time in a more regulated and healthy lifestyle can go a long way! Do take time out of your day to meditate and exercise daily. Everything changes, this shall change too!"
+
+
+func getAdviceSection(stressLevel: Int) -> String {
+    if stressLevel < 40{
+        return level_frustrated
+    }
+    else if stressLevel >= 40 && stressLevel < 60{
+        return level_unhappy
+    }
+    else if stressLevel >= 60 && stressLevel < 80{
+        return level_good
+    }
+    return level_perfect
+}
+
+func getStressLevelEmotion(stressLevel: Int) -> String {
+    if stressLevel < 40{
+        return "Not very good!"
+    }
+    else if stressLevel >= 40 && stressLevel < 60{
+        return "okay-ish"
+    }
+    else if stressLevel >= 60 && stressLevel < 80{
+        return "Happy"
+    }
+    return "Amazing!"
+}
+
 struct TodaysStressView: View {
     
     var stressLevel: Int
@@ -149,10 +214,10 @@ struct TodaysStressView: View {
             HStack{
                 getStressLevelEmoji(stressLevel: stressLevel)
                 VStack{
-                    Text("Today's Score")
+                    Text("You are feeling")
                         .foregroundColor(.black)
                         .font(.system(.title2, design:.default))
-                    Text(String(stressLevel))
+                    Text(getStressLevelEmotion(stressLevel: stressLevel))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .font(.system(.title2, design: .default))
                         .foregroundColor(getStressLevelColor(stressLevel: stressLevel))
@@ -186,7 +251,7 @@ struct StressDataListItemView: View {
                 .foregroundColor(.black)
                 .fontWeight(.medium)
             
-            Text(String(stressLevel))
+            Text(getStressLevelEmotion(stressLevel: stressLevel))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .font(.system(.title2, design: .default))
                 .foregroundColor(getStressLevelColor(stressLevel: stressLevel))

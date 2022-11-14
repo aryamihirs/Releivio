@@ -26,14 +26,14 @@ class HealthKitManager{
             // Handle authorization errors here.
         }
     }
-    
+
     func fetch() {
         let hr = HKSampleType.quantityType(forIdentifier: .heartRate)
         let hrvSDNN = HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)
-        
+
         let startDate = Calendar.current.date(bySettingHour: 14, minute: 35, second: 0, of: Date())!
         let endDate = Calendar.current.date(bySettingHour: 15, minute: 0, second: 0, of: Date())!
-        
+
     }
 
     func fetchData(quantityTypeIdentifier: HKQuantityTypeIdentifier){
