@@ -9,16 +9,40 @@ import SwiftUI
 import HealthKit
 import Charts
 
+// get HRV data from HealthKit API -> pass it to the mlModel -> get a label [0,1,2,3] -> generate stress level value for the graph -> mention mood in the 
 
 let items: [Item] = [
-    Item(type: "Monday", value: 20),
-    Item(type: "Tuesday", value: 60),
-    Item(type: "Wednesday", value: 40),
-    Item(type: "Thursday", value: 50),
-    Item(type: "Friday", value: 75),
-    Item(type: "Saturday", value: 35),
-    Item(type: "Sunday", value: 20),
+    Item(type: "Monday", value: Double(getStressLevelValue())),
+    Item(type: "Tuesday", value: Double(getStressLevelValue())),
+    Item(type: "Wednesday", value: Double(getStressLevelValue())),
+    Item(type: "Thursday", value: Double(getStressLevelValue())),
+    Item(type: "Friday", value: Double(getStressLevelValue())),
+    Item(type: "Saturday", value: Double(getStressLevelValue())),
+    Item(type: "Sunday", value: Double(getStressLevelValue()))
 ]
+
+extension Date {
+    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
+        return calendar.dateComponents(Set(components), from: self)
+    }
+
+    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.component(component, from: self)
+    }
+}
+
+let date = Date()
+
+let components = date.get(.day, .month, .year)
+let day = components.day
+let month = components.month
+let year = components.year
+
+var todaysStressLevel = getStressLevelValue()
+
+var healthStore : HKHealthStore?
+
+
 
 struct ContentView: View {
     var body: some View {
@@ -39,24 +63,12 @@ struct DetailedView {
     var body: some View{
         NavigationView {
             ScrollView {
-//                Chart(items) { item in
-//                    LineMark(
-//                        x: .value("Day", item.type),
-//                        y: .value("Stress Level", item.value)
-//                    )
-//                    .foregroundStyle(Color.blue)
-//                    .interpolationMethod(.cardinal)
-//                }
-//                .frame(height: 200)
-//                .padding()
-                
                 Chart(items) { item in
                     BarMark(
                         x: .value("Day", item.type),
                         y: .value("Stress Level", item.value)
                     )
                     .foregroundStyle(by: .value("Stress Level", item.value))
-                    
                 }
                 .frame(height: 200)
                 .padding()
@@ -66,7 +78,7 @@ struct DetailedView {
     }
 }
 
-func getRandomStressLevelValue() -> Int{
+func getStressLevelValue() -> Int{
     return Int.random(in: 1..<100)
 }
 
@@ -75,67 +87,6 @@ struct Item: Identifiable {
     let type: String
     let value: Double
 }
-
-
-
-//func HRVstart() {
-//    guard let quantityType = HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN) else { return }
-//
-//    let manager = HealthKitManager()
-//
-//    manager.healthStore.execute(HRVStreamingQuery())
-//
-//    // Create query to receive continiuous heart rate samples.
-//    let datePredicate = HKQuery.predicateForSamples(withStart: Date(), end: nil, options: .strictStartDate)
-//    let devicePredicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
-//    let queryPredicate = NSCompoundPredicate(andPredicateWithSubpredicates:[datePredicate, devicePredicate])
-//    let updateHandler: HKQuery5UpdateHandler = { [weak self] query, samples, deletedObjects, queryAnchor, error in
-//        if let quantitySamples = samples as? [HKQuantitySample] {
-//            self?.HRVprocess(samples: quantitySamples)
-//        }
-//    }
-//
-//    let query = HKAnchoredObjectQuery(type: quantityType,
-//                                      predicate: queryPredicate,
-//                                      anchor: nil,
-//                                      limit: HKObjectQueryNoLimit,
-//                                      resultsHandler: updateHandler)
-//    query.updateHandler = updateHandler
-//
-//    // Execute the heart rate query.
-//    manager.healthStore.execute(query)
-//
-//    // Remember all active Queries to stop them later.
-//    HRVactiveQueries.append(query)
-//
-//}
-//
-//private func HRVStreamingQuery() -> HKQuery {
-//    let predicate = HKQuery.predicateForSamples(withStart: NSDate() as Date, end: nil, options: .strictStartDate)
-//    
-//    let query = HKAnchoredObjectQuery(type: self.heartRateVaribalityType, predicate: nil, anchor: nil, limit: Int(HKObjectQueryNoLimit)) {
-//        (query, samples, deletedObjects, anchor, error) -> Void in
-//        self.HRVformatSamples(samples: samples)
-//    }
-//
-//    query.updateHandler = { (query, samples, deletedObjects, anchor, error) -> Void in
-//        self.HRVformatSamples(samples: samples)
-//    }
-//    self.HRVactiveQueries.append(query)
-//
-//    return query
-//}
-//private func HRVformatSamples(samples: [HKSample]?) {
-//
-//    guard let samples = samples as? [HKQuantitySample] else { return }
-//    guard let quantity = samples.last?.quantity else { return }
-//    let beats = quantity.doubleValue(for: HKUnit.secondUnit(with: .milli))
-//    let timestamp = samples[0].endDate
-//
-//    let newHeartRateVariablity = HeartRateVariablity(timestamp: timestamp, hrv: beats)
-//    delegate?.heartRateVariablity(didChangeTo: newHeartRateVariablity)
-//    print("HeartRateVariablity: \(beats)")
-//}
 
 struct DashboardView {
     var body: some View{
@@ -148,16 +99,11 @@ struct DashboardView {
                     .foregroundColor(.black)
                     .font(.system(.title, design: .default))
                     .fontWeight(.heavy)
-                TodaysStressView(stressLevel: getRandomStressLevelValue())
-                List{
-                    StressDataListItemView(day: "Monday", stressLevel: getRandomStressLevelValue())
-                        .padding(10)
-                    StressDataListItemView(day: "Sunday", stressLevel: getRandomStressLevelValue())
-                        .padding(10)
-                    StressDataListItemView(day: "Saturday", stressLevel: getRandomStressLevelValue())
-                        .padding(10)
-                    StressDataListItemView(day: "Friday", stressLevel: getRandomStressLevelValue())
-                        .padding(10)
+                TodaysStressView(stressLevel: todaysStressLevel)
+                List(items){
+                    item in
+                    StressDataListItemView(day: item.type, stressLevel: Int(item.value))
+                            .padding(10)
                 }
             }
         }
@@ -226,8 +172,6 @@ struct TodaysStressView: View {
     }
 }
 
-
-
 struct StressDataListItemView: View {
     
     var day: String
@@ -263,3 +207,62 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+//func HRVstart() {
+//    guard let quantityType = HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN) else { return }
+//
+//    let manager = HealthKitManager()
+//
+//    manager.healthStore.execute(HRVStreamingQuery())
+//
+//    // Create query to receive continiuous heart rate samples.
+//    let datePredicate = HKQuery.predicateForSamples(withStart: Date(), end: nil, options: .strictStartDate)
+//    let devicePredicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
+//    let queryPredicate = NSCompoundPredicate(andPredicateWithSubpredicates:[datePredicate, devicePredicate])
+//    let updateHandler: HKQueryUpdateHandler = { [weak self] query, samples, deletedObjects, queryAnchor, error in
+//        if let quantitySamples = samples as? [HKQuantitySample] {
+//            self?.HRVprocess(samples: quantitySamples)
+//        }
+//    }
+//
+//    let query = HKAnchoredObjectQuery(type: quantityType,
+//                                      predicate: queryPredicate,
+//                                      anchor: nil,
+//                                      limit: HKObjectQueryNoLimit,
+//                                      resultsHandler: updateHandler)
+//    query.updateHandler = updateHandler
+//
+//    // Execute the heart rate query.
+//    manager.healthStore.execute(query)
+//
+//    // Remember all active Queries to stop them later.
+//    HRVactiveQueries.append(query)
+//
+//}
+//
+//private func HRVStreamingQuery() -> HKQuery {
+//    let predicate = HKQuery.predicateForSamples(withStart: NSDate() as Date, end: nil, options: .strictStartDate)
+//
+//    let query = HKAnchoredObjectQuery(type: self.heartRateVaribalityType, predicate: nil, anchor: nil, limit: Int(HKObjectQueryNoLimit)) {
+//        (query, samples, deletedObjects, anchor, error) -> Void in
+//        HRVformatSamples(samples: samples)
+//    }
+//
+//    query.updateHandler = { (query, samples, deletedObjects, anchor, error) -> Void in
+//        HRVformatSamples(samples: samples)
+//    }
+//    HRVactiveQueries.append(query)
+//
+//    return query
+//}
+//private func HRVformatSamples(samples: [HKSample]?) {
+//
+//    guard let samples = samples as? [HKQuantitySample] else { return }
+//    guard let quantity = samples.last?.quantity else { return }
+//    let beats = quantity.doubleValue(for: HKUnit.secondUnit(with: .milli))
+//    let timestamp = samples[0].endDate
+//
+//    let newHeartRateVariablity = HeartRateVariablity(timestamp: timestamp, hrv: beats)
+//    delegate?.heartRateVariablity(didChangeTo: newHeartRateVariablity)
+//    print("HeartRateVariablity: \(beats)")
+//}
