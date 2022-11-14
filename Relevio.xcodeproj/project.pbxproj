@@ -14,6 +14,8 @@
 		407C4FFA28F386CE00328956 /* RelevioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C4FF928F386CE00328956 /* RelevioTests.swift */; };
 		407C500428F386CE00328956 /* RelevioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C500328F386CE00328956 /* RelevioUITests.swift */; };
 		407C500628F386CE00328956 /* RelevioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C500528F386CE00328956 /* RelevioUITestsLaunchTests.swift */; };
+		40FC78082921C199005AF0D5 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FC78062921C199005AF0D5 /* HealthKitManager.swift */; };
+		40FC78092921C199005AF0D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FC78072921C199005AF0D5 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		407C4FFF28F386CE00328956 /* RelevioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelevioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		407C500328F386CE00328956 /* RelevioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevioUITests.swift; sourceTree = "<group>"; };
 		407C500528F386CE00328956 /* RelevioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		40FC78062921C199005AF0D5 /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		40FC78072921C199005AF0D5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		407C4FE628F386CC00328956 /* Relevio */ = {
 			isa = PBXGroup;
 			children = (
+				40FC78062921C199005AF0D5 /* HealthKitManager.swift */,
+				40FC78072921C199005AF0D5 /* ViewController.swift */,
 				407C4FE728F386CC00328956 /* RelevioApp.swift */,
 				407C4FE928F386CC00328956 /* ContentView.swift */,
 				407C4FEB28F386CE00328956 /* Assets.xcassets */,
@@ -261,6 +267,8 @@
 			files = (
 				407C4FEA28F386CC00328956 /* ContentView.swift in Sources */,
 				407C4FE828F386CC00328956 /* RelevioApp.swift in Sources */,
+				40FC78092921C199005AF0D5 /* ViewController.swift in Sources */,
+				40FC78082921C199005AF0D5 /* HealthKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

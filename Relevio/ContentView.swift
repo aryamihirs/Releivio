@@ -6,8 +6,19 @@
 //
 
 import SwiftUI
+import HealthKit
+import Charts
 
 
+let items: [Item] = [
+    Item(type: "Monday", value: 20),
+    Item(type: "Tuesday", value: 60),
+    Item(type: "Wednesday", value: 40),
+    Item(type: "Thursday", value: 50),
+    Item(type: "Friday", value: 75),
+    Item(type: "Saturday", value: 35),
+    Item(type: "Sunday", value: 20),
+]
 
 struct ContentView: View {
     var body: some View {
@@ -26,18 +37,105 @@ struct ContentView: View {
 
 struct DetailedView {
     var body: some View{
-        ZStack
-        {
-            Color.mint
-            Text("Detailed View")
+        NavigationView {
+            ScrollView {
+//                Chart(items) { item in
+//                    LineMark(
+//                        x: .value("Day", item.type),
+//                        y: .value("Stress Level", item.value)
+//                    )
+//                    .foregroundStyle(Color.blue)
+//                    .interpolationMethod(.cardinal)
+//                }
+//                .frame(height: 200)
+//                .padding()
+                
+                Chart(items) { item in
+                    BarMark(
+                        x: .value("Day", item.type),
+                        y: .value("Stress Level", item.value)
+                    )
+                    .foregroundStyle(by: .value("Stress Level", item.value))
+                    
+                }
+                .frame(height: 200)
+                .padding()
+            }
+            .navigationTitle("Stress level data")
         }
-        .navigationTitle("Detailed screen")
     }
 }
 
 func getRandomStressLevelValue() -> Int{
     return Int.random(in: 1..<100)
 }
+
+struct Item: Identifiable {
+    var id = UUID()
+    let type: String
+    let value: Double
+}
+
+
+
+//func HRVstart() {
+//    guard let quantityType = HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN) else { return }
+//
+//    let manager = HealthKitManager()
+//
+//    manager.healthStore.execute(HRVStreamingQuery())
+//
+//    // Create query to receive continiuous heart rate samples.
+//    let datePredicate = HKQuery.predicateForSamples(withStart: Date(), end: nil, options: .strictStartDate)
+//    let devicePredicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
+//    let queryPredicate = NSCompoundPredicate(andPredicateWithSubpredicates:[datePredicate, devicePredicate])
+//    let updateHandler: HKQuery5UpdateHandler = { [weak self] query, samples, deletedObjects, queryAnchor, error in
+//        if let quantitySamples = samples as? [HKQuantitySample] {
+//            self?.HRVprocess(samples: quantitySamples)
+//        }
+//    }
+//
+//    let query = HKAnchoredObjectQuery(type: quantityType,
+//                                      predicate: queryPredicate,
+//                                      anchor: nil,
+//                                      limit: HKObjectQueryNoLimit,
+//                                      resultsHandler: updateHandler)
+//    query.updateHandler = updateHandler
+//
+//    // Execute the heart rate query.
+//    manager.healthStore.execute(query)
+//
+//    // Remember all active Queries to stop them later.
+//    HRVactiveQueries.append(query)
+//
+//}
+//
+//private func HRVStreamingQuery() -> HKQuery {
+//    let predicate = HKQuery.predicateForSamples(withStart: NSDate() as Date, end: nil, options: .strictStartDate)
+//    
+//    let query = HKAnchoredObjectQuery(type: self.heartRateVaribalityType, predicate: nil, anchor: nil, limit: Int(HKObjectQueryNoLimit)) {
+//        (query, samples, deletedObjects, anchor, error) -> Void in
+//        self.HRVformatSamples(samples: samples)
+//    }
+//
+//    query.updateHandler = { (query, samples, deletedObjects, anchor, error) -> Void in
+//        self.HRVformatSamples(samples: samples)
+//    }
+//    self.HRVactiveQueries.append(query)
+//
+//    return query
+//}
+//private func HRVformatSamples(samples: [HKSample]?) {
+//
+//    guard let samples = samples as? [HKQuantitySample] else { return }
+//    guard let quantity = samples.last?.quantity else { return }
+//    let beats = quantity.doubleValue(for: HKUnit.secondUnit(with: .milli))
+//    let timestamp = samples[0].endDate
+//
+//    let newHeartRateVariablity = HeartRateVariablity(timestamp: timestamp, hrv: beats)
+//    delegate?.heartRateVariablity(didChangeTo: newHeartRateVariablity)
+//    print("HeartRateVariablity: \(beats)")
+//}
 
 struct DashboardView {
     var body: some View{
