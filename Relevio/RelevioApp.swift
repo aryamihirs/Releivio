@@ -13,7 +13,7 @@ struct RelevioApp: App {
         WindowGroup {
             // Creating a new screen - ContentView
             ContentView()
-            let _ = HealthKitUtils().getTodaysHeartRates()
+//            let _ = HealthKitUtils().getTodaysHeartRates()
         }
     }
 }
