@@ -1,0 +1,65 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "4af8e9dfc3439ee16e84372e96e88b7789a6ab5ea4e6a892f3f81a3f4711b212"
+    },
+    {
+      "guid" : "4af8e9dfc3439ee16e84372e96e88b77dc155b4d9c561e1d8e7e5e95273ccbd9"
+    },
+    {
+      "guid" : "4af8e9dfc3439ee16e84372e96e88b77828560a9012a56595abcffb5320d89b9"
+    }
+  ],
+  "containerPath" : "/Users/aryamihirs/Documents/GitHub/Releivio/Relevio.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator16.1",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/aryamihirs/Documents/GitHub/Releivio/DerivedData/Relevio/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/aryamihirs/Documents/GitHub/Releivio/DerivedData/Relevio/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/aryamihirs/Documents/GitHub/Releivio/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/aryamihirs/Documents/GitHub/Releivio/DerivedData/Relevio/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/aryamihirs/Documents/GitHub/Releivio/DerivedData/Relevio/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/aryamihirs/Documents/GitHub/Releivio/DerivedData/Relevio/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "INDEX_ARENA_INFO_REGULAR_BUILD_PRODUCTS_DIR" : "/Users/aryamihirs/Documents/GitHub/Releivio/DerivedData/Relevio/Build/Products",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

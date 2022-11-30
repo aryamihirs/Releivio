@@ -1,0 +1,10 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "676513d46f08a13642a2e872a04c10fff7901542ef0062e8b7f3d17f516262d5"
+build_start_time: [1668420396, 470902919]
+build_end_time: [1668420397, 134090900]
+inputs:
+  "/Users/aryamihirs/Documents/GitHub/Releivio/Relevio/ContentView.swift": [1668419415, 888205766]
+  "/Users/aryamihirs/Documents/GitHub/Releivio/Relevio/HealthKitManager.swift": [1668420070, 208345890]
+  "/Users/aryamihirs/Documents/GitHub/Releivio/Relevio/HealthKitUtils.swift": [1668419319, 134756326]
+  "/Users/aryamihirs/Documents/GitHub/Releivio/Relevio/RelevioApp.swift": [1667289216, 0]
+  "/Users/aryamihirs/Documents/GitHub/Releivio/Relevio/ViewController.swift": [1668419290, 380121707]

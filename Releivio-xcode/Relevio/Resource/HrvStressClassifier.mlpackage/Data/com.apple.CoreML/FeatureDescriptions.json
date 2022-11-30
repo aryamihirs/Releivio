@@ -1,0 +1,21 @@
+{
+  "Outputs" : {
+    "stress" : {
+      "MLFeatureShortDescription" : "--"
+    },
+    "classProbability" : {
+      "MLFeatureShortDescription" : "--"
+    }
+  },
+  "Inputs" : {
+    "HR" : {
+      "MLFeatureShortDescription" : "--"
+    },
+    "SDNN" : {
+      "MLFeatureShortDescription" : "--"
+    }
+  },
+  "TrainingInputs" : {
+
+  }
+}

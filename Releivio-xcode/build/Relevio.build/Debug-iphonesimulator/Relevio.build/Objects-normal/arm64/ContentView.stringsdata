@@ -1,0 +1,36 @@
+{
+  "source": "/Users/aryamihirs/Documents/GitHub/Releivio/Relevio/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Dashboard screen"
+      },
+      {
+        "comment": "",
+        "key": "Dashboard"
+      },
+      {
+        "comment": "",
+        "key": "Detail"
+      },
+      {
+        "comment": "",
+        "key": "Stress level data"
+      },
+      {
+        "comment": "",
+        "key": "Day"
+      },
+      {
+        "comment": "",
+        "key": "Stress Level"
+      },
+      {
+        "comment": "",
+        "key": "Today's Score"
+      }
+    ]
+  },
+  "version": 1
+}

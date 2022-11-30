@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "00E69474-36A5-438E-AE00-34ED777EF737": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "HrvStressClassifier.mlmodel",
+            "path": "com.apple.CoreML/HrvStressClassifier.mlmodel"
+        },
+        "E726C43D-118C-49BE-9FDA-8C6B74B04912": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        },
+        "EDEDDCC6-FA79-4119-916D-AFF3E2CE6E1B": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        }
+    },
+    "rootModelIdentifier": "00E69474-36A5-438E-AE00-34ED777EF737"
+}

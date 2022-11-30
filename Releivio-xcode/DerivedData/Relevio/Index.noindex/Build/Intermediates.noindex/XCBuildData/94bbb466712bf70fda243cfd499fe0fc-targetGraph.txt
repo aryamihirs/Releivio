@@ -1,0 +1,21 @@
+Target dependency graph (12 targets)
+Relevio in Relevio, no dependencies
+Relevio in Relevio, no dependencies
+Relevio in Relevio, no dependencies
+Relevio in Relevio, no dependencies
+RelevioTests in Relevio, depends on:
+Relevio in Relevio (explicit)
+RelevioTests in Relevio, depends on:
+Relevio in Relevio (explicit)
+RelevioTests in Relevio, depends on:
+Relevio in Relevio (explicit)
+RelevioTests in Relevio, depends on:
+Relevio in Relevio (explicit)
+RelevioUITests in Relevio, depends on:
+Relevio in Relevio (explicit)
+RelevioUITests in Relevio, depends on:
+Relevio in Relevio (explicit)
+RelevioUITests in Relevio, depends on:
+Relevio in Relevio (explicit)
+RelevioUITests in Relevio, depends on:
+Relevio in Relevio (explicit)

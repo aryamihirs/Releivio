@@ -1,0 +1,10 @@
+{
+  "MLModelVersionStringKey" : "--",
+  "MLModelDescriptionKey" : "--",
+  "MLModelCreatorDefinedKey" : {
+    "com.github.apple.coremltools.version" : "6.1",
+    "com.github.apple.coremltools.source" : "scikit-learn==1.0.2"
+  },
+  "MLModelAuthorKey" : "Arya Mihir Singh",
+  "MLModelLicenseKey" : "--"
+}
